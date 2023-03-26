@@ -16,8 +16,8 @@ public class Vehiculo {
 	protected Fabricante fabricante;
 	private static int CantidadVehiculos;
 	//protected static Vehiculo[] vehiculos;
-	private static List<Pais> paises = new ArrayList<>();
-	private static List<Fabricante> fabricantes = new ArrayList<>();
+	public static List<Pais> paises = new ArrayList<>();
+	public static List<Fabricante> fabricantes = new ArrayList<>();
 	
 	protected static int cantidadAutomoviles = 0;
 	protected static int cantidadCamionetas = 0;
@@ -118,35 +118,5 @@ public class Vehiculo {
                "Camiones: " + cantidadCamiones;
 	}
 
-	
-    public static Pais paisMasVendedor() {
-    	
-        Pais masRepetido = paises.get(0);
-        int mayorFrecuencia = 0;
-        for (Pais obj : paises) {
-            int frecuencia = Collections.frequency(paises, obj);
-            if (frecuencia > mayorFrecuencia) {
-            	mayorFrecuencia = frecuencia;
-                masRepetido = obj;
-            }
-        }
-        
-        return masRepetido;
-    }
-
-    
-    public static Fabricante fabricaMayorVentas() {
-    	Fabricante masRepetido = fabricantes.get(0);
-        int mayorFrecuencia = 0;
-        for (Fabricante obj : fabricantes) {
-            int frecuencia = Collections.frequency(fabricantes, obj);
-            if (frecuencia > mayorFrecuencia) {
-            	mayorFrecuencia = frecuencia;
-                masRepetido = obj;
-            }
-        }
-        
-        return masRepetido;
-    }
 	
 }

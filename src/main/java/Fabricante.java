@@ -1,5 +1,7 @@
 package vehiculos;
 
+import java.util.Collections;
+
 public class Fabricante {
 
 	private String nombre;
@@ -28,5 +30,17 @@ public class Fabricante {
     }
 	
     
-    
+    public static Fabricante fabricaMayorVentas() {
+    	Fabricante masRepetido = Vehiculo.fabricantes.get(0);
+        int mayorFrecuencia = 0;
+        for (Fabricante obj : Vehiculo.fabricantes) {
+            int frecuencia = Collections.frequency(Vehiculo.fabricantes, obj);
+            if (frecuencia > mayorFrecuencia) {
+            	mayorFrecuencia = frecuencia;
+                masRepetido = obj;
+            }
+        }
+        
+        return masRepetido;
+    }
 }
